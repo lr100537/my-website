@@ -1,17 +1,62 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Fan Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-     /* Apply smooth scrolling on the html element */
-     html {
-         scroll-behavior: smooth; /* Smooth scrolling for anchor navigation */
-     }
+    /* Apply smooth scrolling on the html element */
+    html {
+      scroll-behavior: smooth;
+    }
 
-     body{
-         text-align: center;
-         background-image: linear-gradient(rgb(51, 255, 134), rgb(155, 110, 73));
-         min-width: 100%;
-         min-height: 100%;
-      }
+    body {
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      min-width: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Light mode (default) background and text color */
+    .light-mode {
+      background-image: linear-gradient(rgb(51, 255, 134), rgb(155, 110, 73));
+      color: black;
+    }
+
+    /* Dark mode background and text color */
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+
+    h1 {
+      color: rgb(65, 165, 238); /* Title color */
+      margin-top: 10px; /* Adjust heading position */
+    }
+
+    h2, h3, h4 {
+      color: rgb(3, 118, 203); /* Subheading color */
+    }
+
+    h5 {
+      color: #000; /* Black color for h5 */
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    h5 {
+      margin-top: 10px;
+    }
+
+    .content {
+      padding: 30px;
+    }
 
     .bn632-hover {
       width: 160px;
@@ -25,32 +70,15 @@
       border: none;
       background-size: 300% 100%;
       border-radius: 50px;
-      moz-transition: all .4s ease-in-out;
-      -o-transition: all .4s ease-in-out;
-      -webkit-transition: all .4s ease-in-out;
-      transition: all .4s ease-in-out;
+      transition: all 0.4s ease-in-out;
     }
 
     .bn632-hover:hover {
       background-position: 100% 0;
-      moz-transition: all .4s ease-in-out;
-      -o-transition: all .4s ease-in-out;
-      -webkit-transition: all .4s ease-in-out;
-      transition: all .4s ease-in-out;
-    }
-
-    .bn632-hover:focus {
-      outline: none;
     }
 
     .bn632-hover.bn22 {
-      background-image: linear-gradient(
-        to right,
-        #0ba360,
-        #3cba92,
-        #30dd8a,
-        #2bb673
-      );
+      background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
       box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
     }
 
@@ -66,77 +94,123 @@
       padding: 15px;
       font-size: 20px;
       cursor: pointer;
-      text-decoration: none;
       display: block;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
     }
 
     #backToTop:hover {
       background-color: #3cba92;
     }
 
+    #backToTop.visible {
+      opacity: 1;
+    }
+
+    /* Dark mode button styles */
+    #darkModeToggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+      font-size: 18px;
+      padding: 8px 16px;
+      cursor: pointer;
+      z-index: 1000;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    #darkModeToggle:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
   </style>
 </head>
 
-<body id="top">
+<body class="light-mode" id="top">
 
-<h1><font color="#10abf9"> Minecraft </font></h1>
+  <!-- Dark Mode Toggle Button -->
+  <button id="darkModeToggle">Dark Mode</button>
 
-<br>
+  <div class="content">
+    <h1>Minecraft Fan Website</h1>
 
-<h2>What is Minecraft?</h2>
-  
-Minecraft is a 3D sandbox video game that has no required goals to accomplish, allowing players a large amount of freedom in choosing how to play the game.<br>
-<br>
+    <h2>What is Minecraft?</h2>
+    <p>Minecraft is a 3D sandbox video game that has no required goals to accomplish, allowing players a large amount of freedom in choosing how to play the game.</p>
 
-<h2>When was it made?</h2>
-Being made 2009 - the game was very good for its time and there was no game like it.<br>
+    <h2>When was it made?</h2>
+    <p>Created in 2009, Minecraft was revolutionary and unique for its time.</p>
 
-<br>
+    <h2>Where is it now?</h2>
+    <p>The game has evolved significantly, from update 1.0 to 1.21 over 15 years!</p>
 
-<h2>Where is it now?</h2>
-The game after 15 whole years has gone far, from update 1.0 
-to 1.21<br>
+    <iframe src="https://www.youtube.com/embed/NG-5L34HqOs?si=v2aWk7HN5xqebdw0" title="Minecraft Update Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h5>The latest update</h5>
 
-  <br> 
+    <p>Fun fact: Minecraft is getting a movie soon!</p>
 
-<iframe width="315" height="235" src="https://www.youtube.com/embed/NG-5L34HqOs?si=v2aWk7HN5xqebdw0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><h5>The latest update</h5><br>
+    <h2>Minecraft Music</h2>
+    <p>Notable tracks from the game include: 
+      <a href="https://www.youtube.com/watch?v=TY6KMrkgaH4&t=4551s" target="_blank">C418 - Aria Math</a>, 
+      <a href="https://www.youtube.com/watch?v=BTthtlT80Rc" target="_blank">Pig Step by Lena Raine</a>, and 
+      <a href="https://www.youtube.com/watch?v=Qtf8YFw8iZg" target="_blank">Creator by Lena Raine</a>.
+    </p>
 
-<br>
+    <h2>Benefits of Playing Minecraft</h2>
+    <ul>
+      <li>Boosts creativity</li>
+      <li>Encourages teamwork through multiplayer</li>
+      <li>Teaches engineering skills through survival mechanics</li>
+      <li>Improves focus</li>
+    </ul>
 
-Fun fact: the game has a movie being made on it! <br>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+      <a href="https://www.imdb.com/title/tt2011970/reviews/">
+        <button class="bn632-hover bn22">Reviews</button>
+      </a>
+      <a href="https://www.minecraft.net/en-us/about-minecraft">
+        <button class="bn632-hover bn22">The Minecraft Website</button>
+      </a>
+    </div>
 
-<h2>Minecraft music</h2>
+    <h2>About Me</h2>
+    <p>Hi! I'm Laksh Ratnani, the creator of this website. To know more about me, check out the website below. <br> (COMING SOON)</p>
 
-The music from the game is very well known this includes: <a href="https://www.youtube.com/watch?v=TY6KMrkgaH4&t=4551s">C418</a> by Aria Math, <a href="https://www.youtube.com/watch?v=BTthtlT80Rc">Pig Step</a> by Lena Raine and one of the newer ones, <a href="https://www.youtube.com/watch?v=Qtf8YFw8iZg">Creator</a> also by Lena Raine. 
+    <p>© 2024 Minecraft Fan Website</p>
+  </div>
 
+  <!-- Back to Top Button -->
+  <a href="#top" id="backToTop">↑</a>
 
-<h2>Benefits of playing Minecraft</h2>
+  <script>
+    // Dark Mode Toggle functionality
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
 
-<li>Creativity is boosted</li>
-<li>Teamwork because of the multiplayer feature </li>
-<li>Engineering because you have to build shelter to survive</li>
-<li>Focus</li>
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');  // Toggle the dark-mode class on body
+      body.classList.toggle('light-mode'); // Toggle the light-mode class on body
+      if (body.classList.contains('dark-mode')) {
+        darkModeToggle.textContent = 'Light Mode';  // Change to Light Mode when dark mode is active
+      } else {
+        darkModeToggle.textContent = 'Dark Mode';  // Change back to Dark Mode when not active
+      }
+    });
 
-<div style="display: flex; justify-content: center; gap: 10px;">
-  <a href="https://www.imdb.com/title/tt2011970/reviews/">
-    <button class="bn632-hover bn22">Reviews</button>
-  </a>
-  <a href="https://www.minecraft.net/en-us/about-minecraft">
-    <button class="bn632-hover bn22">The Minecraft Website</button>
-  </a>
-</div>
-
-<h2> About me </h2>
-
-Hi! My name is Laksh Ratnani, I am the creator of this website. To know more about me click the website below this. <br>
-
-(COMING SOON)
-
-<p>© 2024 Minecraft Fan Website</p>
-
-<!-- Back to Top Button -->
-<a href="#top" id="backToTop">↑</a>
+    // Show the back to top button when scrolling down
+    window.onscroll = function() {
+      var backToTop = document.getElementById('backToTop');
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    };
+  </script>
 
 </body>
 </html>
